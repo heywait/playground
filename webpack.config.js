@@ -1,10 +1,15 @@
-var path = require('path'),
-    config = {
-    entry: './client/index',
+var webpack = require('webpack');
+var path = require('path');
+var config = {
+    entry: [
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/only-dev-server',
+        './client/index'
+    ],
     output: {
         path: path.join(__dirname, 'build'),
-        publicPath: '/static/',
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/static/'
     },
     resolve: {
         extensions: [
@@ -17,6 +22,9 @@ var path = require('path'),
             '.json'
         ]
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
     module: {
         loaders: [
             {

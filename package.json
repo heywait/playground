@@ -4,18 +4,11 @@
     "author": "heywait",
     "version": "0.0.1",
     "scripts": {
-        "build": "better-npm-run build-dev",
         "server": "better-npm-run server-dev"
     },
     "betterScripts": {
-        "build-dev": {
-            "command": "node ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --progress --colors --watch",
-            "env": {
-                "NODE_ENV": "development"
-            }
-        },
         "server-dev": {
-            "command": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors"
+            "command": "node webpack/server"
         }
     },
     "dependencies": {
