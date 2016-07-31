@@ -1,0 +1,14 @@
+{
+    "name": "munchkin",
+    "description": "Web version of table game Munchkin",
+    "author": "heywait",
+    "version": "0.0.1",
+    "dependencies": {
+        "react": "15.3.0"
+    },
+    "devDependencies": {
+        "webpack": "1.13.1",
+        "webpack-babel-external-helpers": "0.1.0",
+        "typescript": "1.8.10"        
+    }
+}
