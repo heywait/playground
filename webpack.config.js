@@ -1,39 +1,23 @@
-var webpack = require('webpack');
-var path = require('path');
-var config = {
-    entry: [
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server',
-        './client/index'
-    ],
-    output: {
-        path: path.join(__dirname, 'build'),
-        filename: 'bundle.js',
-        publicPath: '/static/'
-    },
-    resolve: {
-        extensions: [
-            '',
-            '.webpack.js',
-            '.web.js',
-            '.ts',
-            '.tsx',
-            '.js',
-            '.json'
-        ]
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                loaders: ['react-hot', 'babel'],
-                include: path.join(__dirname, 'client')
-            }
-        ]
-    }
-};
+const path = require('path');
 
-module.exports = config;
+module.exports = {
+    entry: "./src/index.tsx",
+    mode: "development",
+    devtool: "inline-source-map",
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                exclude: /node_modules/
+            }
+        ],
+    },
+    resolve:   {
+        extensions: [".tsx", ".ts", ".js"]
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: "bundle.js"
+    },
+};
