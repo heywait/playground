@@ -1,7 +1,9 @@
 import React from 'react';
+// @ts-ignore
+import styles from './styles.css';
 
 const Application = () => {
-    return <div>test page</div>;
+    return <div className={styles.root}>test page</div>;
 };
 
 export default Application;
